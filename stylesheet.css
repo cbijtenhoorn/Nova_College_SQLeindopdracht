@@ -1,0 +1,57 @@
+a:link, a:visited {
+    background-color: pink;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: hotpink;
+}
+
+table, th, td {
+    border: 2px solid pink;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+body{
+    font-family: "Trebuchet MS";
+}
+
+#header{
+    float: left;
+    width: 90vw;
+    height: 110px;
+}
+
+#left{
+    padding: 5px;
+    float: left;
+    width: 48%;
+    border-style: solid;
+    border-color: pink;
+    border-width: 2px;
+}
+
+#right1{
+    padding: 5px;
+    float: right;
+    width: 48%;
+    border-style: solid;
+    border-color: pink;
+    border-width: 2px;
+}
+
+#right2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    float: right;
+    width: 48%;
+    border-style: solid;
+    border-color: pink;
+    border-width: 2px;
+}
