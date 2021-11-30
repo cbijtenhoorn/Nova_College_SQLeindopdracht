@@ -17,17 +17,17 @@ table, th, td {
     padding: 3px;
 }
 
-body{
+body {
     font-family: "Trebuchet MS";
 }
 
-#header{
+#header {
     float: left;
     width: 90vw;
     height: 110px;
 }
 
-#left{
+#left {
     padding: 5px;
     float: left;
     width: 48%;
@@ -36,7 +36,7 @@ body{
     border-width: 2px;
 }
 
-#right1{
+#right1 {
     padding: 5px;
     float: right;
     width: 48%;
@@ -45,7 +45,7 @@ body{
     border-width: 2px;
 }
 
-#right2{
+#right2 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;

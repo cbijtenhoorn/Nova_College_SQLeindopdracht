@@ -1,17 +1,16 @@
 <?php
 //bestand met databasegegevens
-$conf["Username"]= 'root';
-$conf["Password"]= '';
-$conf["Host"]= 'localhost';
-$conf["Database"]= 'classicmodels';
+$conf["Username"] = 'root';
+$conf["Password"] = '';
+$conf["Host"] = 'localhost';
+$conf["Database"] = 'classicmodels';
 
 //verbind met server
 $con = mysqli_connect($conf["Host"], $conf["Username"],
     $conf["Password"], $conf["Database"]);
 
 // Verbinding is mislukt
-if($con == false)
-{
+if ($con == false) {
     echo "Kan geen verbinding maken met de database";
 }
 
@@ -33,7 +32,7 @@ function printTable($con, $sql)                                 //functie om de 
     $html .= '</tr></thead><tbody>';                            //print per rij de inhoud
     while ($row = mysqli_fetch_assoc($result)) {
         $html .= '<tr>';
-        foreach($row as $value) {
+        foreach ($row as $value) {
             $html .= '<td>' . $value . '</td>';
         }
         $html .= '</tr>';
@@ -42,4 +41,5 @@ function printTable($con, $sql)                                 //functie om de 
     $html .= '</tbody></table>';
     return $html;                                               //returned de tabel om vervolgens te kunnen echo-en
 }
+
 ?>

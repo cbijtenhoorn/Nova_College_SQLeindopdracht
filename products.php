@@ -21,8 +21,33 @@
     echo printTable($con, $sql) . '<br><br>'; ?>
 </div>
 <div id="right1">
-    <?php echo "";
-    echo printTable($con, $sql) . '<br><br>'; ?>
+    <?php
+    $sql = "SELECT productLine FROM productlines;";
+    $result = mysqli_query($con, $sql);
+
+    echo '<form method="post" action="products.php">
+          <select name="productline">';
+    while ($row = mysqli_fetch_assoc($result)) {
+        foreach ($row as $value) {
+            echo '<option>' . $value . '</option>';
+        }
+    }
+    echo '</select><input type="submit" value="filter"></form>';
+
+    if (isset($_POST['productline'])) {
+        $filter = $_POST['productline'];
+        $sql = "SELECT productCode, productName, CONCAT('€', FORMAT(buyPrice, 2, 'de_DE')) AS price
+                FROM products
+                WHERE productLine = '$filter';";
+
+        $result = mysqli_query($con, $sql);
+        $rows = mysqli_num_rows($result);
+
+        echo "De geselecteerde productlijn is: " . '<b>' . $filter . '</b><br>';
+        echo "Totaal aantal producten in deze productlijn is: " . '<b>' . $rows . '</b><br><br>';
+        echo printTable($con, $sql) . '<br><br>';
+    }
+    ?>
 </div>
 </body>
 </html>
