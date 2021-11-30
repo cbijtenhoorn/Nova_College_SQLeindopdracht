@@ -29,7 +29,12 @@
           <select name="productline">';
     while ($row = mysqli_fetch_assoc($result)) {
         foreach ($row as $value) {
-            echo '<option>' . $value . '</option>';
+            if(isset($_POST['productline']) && $_POST['productline'] == $value){
+                echo '<option selected>' . $value . '</option>';
+            }
+            else {
+                echo '<option>' . $value . '</option>';
+            }
         }
     }
     echo '</select><input type="submit" value="filter"></form>';
